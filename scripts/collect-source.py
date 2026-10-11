@@ -65,6 +65,8 @@ with ZipFile(path, 'w', ZIP_DEFLATED) as archive:
             for member in source.getmembers():
                 if member.isfile() and (member.name.endswith('.map') or PurePosixPath(member.name).name in ['LICENSE','package.json']):
                     archive.writestr('npm-source/'+package['name']+'/'+member.name, source.extractfile(member).read())
+    # CMake ExternalProject pins this separately from Git submodules.
+    collect(archive, 'ptitSeb/gl4es', 'a744af14d4afbda77bf472bc53f43b9ceba39cc0', 'emulators/external/gl4es')
     collect(archive, 'cubiclesoft/js-fileexplorer', 'b81b0ca131abd50243ca85054af070a35293e346', 'file-explorer-license-provenance')
     for name in ['idb','fflate']:
         # Include preferred dependency source, not only compiled wrapper output.

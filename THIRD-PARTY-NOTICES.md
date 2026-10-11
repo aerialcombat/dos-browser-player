@@ -16,6 +16,11 @@ Commercial DOS games and user saves are not part of this release.
   Source: https://github.com/js-dos/dosbox-x/tree/788fde99d3d451eab3621009186e5abe516f2b9c
   Original project: https://github.com/joncampbell123/dosbox-x
 
+- GL4ES: the OpenGL translation library pinned by the emulator CMake build at
+  `a744af14d4afbda77bf472bc53f43b9ceba39cc0`. Source and original notices are in
+  `emulators/external/gl4es` in the upstream source archive.
+  https://github.com/ptitSeb/gl4es/tree/a744af14d4afbda77bf472bc53f43b9ceba39cc0
+
 Original notices and component licenses remain in the accompanying upstream source
 archive. These include the native libraries embedded in the WASM runtime. The
 wrapper's license does not replace those notices or change their original terms.
