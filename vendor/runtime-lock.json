@@ -1,0 +1,16 @@
+[
+  {
+    "name": "js-dos",
+    "version": "8.5.3",
+    "commit": "506dfd2a99f56bc4e393a716125ae94e58eb3fba",
+    "archive": "https://registry.npmjs.org/js-dos/-/js-dos-8.5.3.tgz",
+    "sha256": "711f7741486daef927c7f2b6ac6c1037b830dffc75ebf7d7106173f18fbe8756"
+  },
+  {
+    "name": "emulators",
+    "version": "8.5.2",
+    "commit": "6bbf0925d221a7304ea8e0dda1e89b8dc01569b2",
+    "archive": "https://registry.npmjs.org/emulators/-/emulators-8.5.2.tgz",
+    "sha256": "99a3e6f257726749915f4dc6828d82cd9834969aa69cc2dcc5ed8babfb323cb4"
+  }
+]

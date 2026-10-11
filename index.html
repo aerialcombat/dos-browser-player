@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Existing dark player extended with session and save controls.
+     The game leads; the compact toolbar uses its established gold accent.
+     Saves distinguish game files from browser persistence and portable backups.
+     The js-dos mount stays empty and the tested audio/render pipeline is retained. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DOS Browser Player</title>
+  <link rel="stylesheet" href="./vendor/js-dos.css" />
+  <link rel="stylesheet" href="./assets/player.css?v=release2" />
+  <script src="./vendor/js-dos.js?v=8.5.3-player2"></script>
+  <script type="module" src="./assets/player.js?v=release2"></script>
+</head>
+<body>
+  <header class="player-bar">
+    <h1>DOS Browser Player</h1>
+    <label class="game-picker">Game <select id="game" disabled></select></label>
+    <nav class="controls" aria-label="Game controls">
+      <button id="open" disabled>Open game</button>
+      <button id="pause" aria-pressed="false" disabled>Pause</button>
+      <button id="save" disabled>Save to browser</button>
+      <button id="stop" disabled>Save &amp; stop</button>
+      <button id="fullscreen">Fullscreen</button>
+      <label class="volume">Volume <input id="volume" type="range" min="0" max="1" step="0.05" value="1" disabled /></label>
+    </nav>
+  </header>
+  <main id="dos" aria-label="DOS game window"></main>
+  <footer class="player-footer">
+    <div class="save-line"><output id="status" role="status">Loading the player…</output><span id="saved">No browser save yet</span></div>
+    <p id="error" role="alert" hidden></p>
+    <details>
+      <summary>Saved games &amp; backups</summary>
+      <div class="save-help">
+        <p>Save your game inside the game first, then choose <strong>Save to browser</strong>. Saved files are also persisted every minute while the game is open. Download a backup to move them to another browser or device.</p>
+        <button id="export" disabled>Download backup</button>
+        <button id="import" disabled>Restore backup</button>
+        <button id="recover" disabled>Recover previous save</button>
+        <p>Stop the game before restoring. Your current browser save is kept for recovery. Backups contain saved files, not a snapshot of the running game.</p>
+        <input id="backup-file" type="file" accept=".dos-save" hidden />
+      </div>
+    </details>
+  <p class="license-note">DOS Browser Player · <a href="./LICENSE">GPL v2</a> · No warranty · <a href="./THIRD-PARTY-NOTICES.md">Credits &amp; source</a></p>
+  </footer>
+</body>
+</html>

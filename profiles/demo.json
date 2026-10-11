@@ -1,0 +1,10 @@
+{
+  "id": "demo",
+  "title": "DOS Player Demo",
+  "bundle": "./demo.jsdos",
+  "version": "c919f12fb9b9",
+  "saveKey": "./demo.jsdos.changes",
+  "backend": "dosboxX",
+  "runtime": "8.5.3",
+  "emulators": "8.5.2"
+}

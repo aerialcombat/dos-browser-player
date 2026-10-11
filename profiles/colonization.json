@@ -1,0 +1,10 @@
+{
+  "id": "colonization",
+  "title": "Sid Meier\u2019s Colonization",
+  "bundle": "./colonization.jsdos",
+  "version": "b87c5e5ad97a",
+  "saveKey": "./colonization.jsdos.changes",
+  "backend": "dosboxX",
+  "runtime": "8.5.3",
+  "emulators": "8.5.2"
+}
