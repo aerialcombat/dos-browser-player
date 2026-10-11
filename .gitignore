@@ -1,0 +1,15 @@
+node_modules/
+assets/
+.derived/
+server.log
+*.jsdos
+*.dos-save
+bundle-src/
+.Codex/
+.DS_Store
+__pycache__/
+*.pyc
+vendor/*.js
+vendor/*.css
+vendor/*.png
+vendor/emulators/

@@ -1,0 +1,10 @@
+{
+  "id": "lost-dutchman-mine",
+  "title": "Lost Dutchman Mine",
+  "bundle": "./lost-dutchman-mine.jsdos",
+  "version": "80e513223ff0",
+  "saveKey": "./lost-dutchman-mine.jsdos.changes",
+  "backend": "dosboxX",
+  "runtime": "8.5.3",
+  "emulators": "8.5.2"
+}

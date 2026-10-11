@@ -1,0 +1,49 @@
+/* Extend the existing dark player: the game is the focal point; controls recede. */
+:root { color-scheme: dark; font-family: system-ui, sans-serif; background: #080808; color: #f0e9dc; }
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; min-height: 320px; }
+.player-bar { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; padding: 10px 20px; background: #171715; border-bottom: 1px solid #444238; }
+.player-bar h1 { margin: 0; font-size: 16px; font-weight: 600; }
+.controls { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+button { min-height: 36px; padding: 6px 12px; border: 1px solid #686356; border-radius: 4px; background: #24231f; color: #f0e9dc; font: inherit; font-size: 13px; cursor: pointer; }
+button:hover:not(:disabled) { background: #3c392f; border-color: #c8a05a; }
+button:active:not(:disabled) { background: #534b37; }
+button:disabled { color: #aaa397; border-color: #464238; cursor: default; background: #171715; }
+button:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px solid #e6ba6b; outline-offset: 3px; }
+#save { border-color: #c8a05a; }
+.volume { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.volume input { width: 80px; accent-color: #c8a05a; }
+#dos { min-height: 0; position: relative; background: #000; }
+.dos-mount { width: 100%; height: 100%; }
+#dos[data-state="stopped"]::after { content: 'Your session is closed. Open game to continue.'; position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; color: #c8a05a; text-align: center; pointer-events: none; }
+.player-footer { padding: 10px 20px; border-top: 1px solid #444238; background: #171715; font-size: 13px; }
+.save-line { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 6px 24px; }
+#status { color: #f0e9dc; }
+#saved { color: #c8bfae; font-size: 12px; }
+#error { margin: 8px 0 0; color: #ffb7a9; max-width: 75ch; }
+details { margin-top: 8px; }
+summary { color: #d1b981; cursor: pointer; width: fit-content; }
+.save-help { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding-top: 10px; }
+.save-help p { width: 100%; max-width: 75ch; line-height: 1.5; margin: 0 0 4px; }
+[hidden] { display: none !important; }
+@media (max-width: 700px) {
+  .player-bar { padding: 8px 10px; gap: 8px; }
+  .player-bar h1 { width: 100%; }
+  .controls { gap: 4px; }
+  button { padding: 6px 9px; }
+  .player-footer { padding: 8px 10px; }
+  .volume input { width: 64px; }
+}
+
+/* The DOS game draws its own pointer; hide the host pointer on its input surface. */
+#dos[data-state="running"] canvas,
+#dos[data-state="running"] .emulator-mouse-overlay { cursor: none !important; }
+
+.game-picker { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.game-picker select { max-width: 230px; min-height: 36px; background: #24231f; color: #f0e9dc; border: 1px solid #686356; border-radius: 4px; padding: 6px; font: inherit; }
+select:focus-visible { outline: 2px solid #e6ba6b; outline-offset: 3px; }
+
+.license-note { margin: 8px 0 0; font-size: 11px; color: #aaa397; }
+a { color: #d1b981; }
+a:focus-visible { outline: 2px solid #e6ba6b; outline-offset: 3px; }

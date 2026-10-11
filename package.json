@@ -1,0 +1,32 @@
+{
+  "name": "dos-browser-player",
+  "version": "0.2.0",
+  "description": "Open-source DOS browser player with local saves and portable backups",
+  "scripts": {
+    "build": "python3 scripts/patch-runtime.py && tsc && vite build",
+    "test": "node --test tests/*.test.ts",
+    "check": "npm test && npm run build",
+    "serve": "python3 -m http.server 8123 --bind 127.0.0.1",
+    "bundle": "python3 scripts/add-game.py",
+    "setup": "python3 scripts/setup-runtime.py && python3 scripts/build-demo.py",
+    "release": "npm run check && python3 scripts/release.py"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-2.0-only",
+  "type": "module",
+  "dependencies": {
+    "fflate": "0.8.3",
+    "idb": "8.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "fake-indexeddb": "6.2.5",
+    "typescript": "7.0.2",
+    "vite": "8.3.4"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}
